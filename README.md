@@ -5,6 +5,9 @@ The app uses PostgreSQL as a database, processes transaction data exported from 
 
 pip install -r requirements.txt
 
+docker run -d --name finances_db -e POSTGRES_PASSWORD=finances -e POSTGRES_USER=postgres -e POSTGRES_DB=finances -p 5432:5432 --restart always postgres:latest
+
+docker run -d --name pgadmin -e PGADMIN_DEFAULT_EMAIL=arthur.linsen@gmail.com -e PGADMIN_DEFAULT_PASSWORD=root -p 8080:80 --link finances_db:db --restart always dpage/pgadmin4
 
 ⚠️ Currently built for KBC Bank Belgium (Flanders) CSV exports. Other banks may have different formats that require adjustments.
 
