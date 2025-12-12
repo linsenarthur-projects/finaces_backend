@@ -47,3 +47,18 @@ TODO
 - [ ] look into free & standard format for possible description of transaction table
 - [ ] install fail save als aantal transacties inkomend niet overkomt met verwerkt dat deze bepaalde lijnen getoond/gelogd worden
 - [x] alle inkomende transacties (desbetreffende accounts) checken of accounts al bestaan anders nieuwe aanmaken
+
+
+docker run --name finance_db \
+  -e POSTGRES_USER=root \
+  -e POSTGRES_PASSWORD=root \
+  -e POSTGRES_DB=finance_db \
+  -p 5432:5432 \
+  -d postgres:14.5
+
+
+docker run --name pgadmin \
+  -e PGADMIN_DEFAULT_EMAIL=arthur.linsen@gmail.com \
+  -e PGADMIN_DEFAULT_PASSWORD=root \
+  -p 5050:80 \
+  -d dpage/pgadmin4

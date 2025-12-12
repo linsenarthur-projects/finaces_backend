@@ -1,6 +1,6 @@
-from utils.file_reader import upload_csv
-from utils.file_transformer import clean_and_transform_data
-from utils.data_generator import (
+from src.services.file_service.file_reader import upload_csv
+from src.services.file_service.file_transformer import clean_and_transform_data
+from src.repository.data_generator import (
     get_internal_accounts, 
     get_accounts_from_data, 
     get_categories, 
